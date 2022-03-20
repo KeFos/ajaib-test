@@ -2,12 +2,44 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Additional Implementation
+## Project Flows
+
+This project is using https://randomuser.me/api/ as API request.
+
+### Home Page
+
+The home page will be shown first and will fetch data after the components is rendered.
+The requested data will be shown in 10 results with a random users and will throw
+an alert if there is an error occurred.
+
+As for the pagination component, the previous data will not be randomized as long
+as `seed` params doesn't change. Since the API data is randomized, next button
+will always be available for the time being.
+
+### Search 
+
+The search component can be used by typing the input to gain the results of
+matching username, name, or email. The search component will trigger by
+itself after the user stop typing for 1 second.
+
+Since the api doesn't provide searching parameter, the search component will
+fetch the data first and will be filtered after.
+
+### Filter
+
+The filter component can be used by selecting the select element and the page
+will fetch the data if there is a changed value occurred. Reset filter button can
+be used if the current option value is not `All`. When the reset button is clicked
+the option value will be change in to `All` and will fetch the data after.
+
+
+## Additional Implementation
 
 From my perspective to improving this web performance is to:
 1. Use [Redux Saga](https://github.com/redux-saga/redux-saga) instead of [Redux Thunk](https://github.com/reduxjs/redux-thunk) to make redux middleware state flow easier to read
 2. Use [React Table](https://github.com/TanStack/react-table) is a good choice to have a better performance on table components
 3. Use [React Intl](https://formatjs.io/docs/react-intl/) for having a good internationalize structure
+4. Implement a better structure for storing data and types
 
 ## Available Scripts
 
