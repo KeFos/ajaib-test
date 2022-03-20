@@ -9,6 +9,10 @@ const GenderFilter = ({ change, reset }: Props) => {
 
     const [gender, setGender] = useState('');
 
+    const checkGenderValue = () => {
+        return gender === '';
+    }
+
     return (
         <div>
             <div>
@@ -22,7 +26,10 @@ const GenderFilter = ({ change, reset }: Props) => {
                     <option value="female" >Female</option>
                     <option value="male" >Male</option>
                 </select>
-                <button type="button" className="py-2 px-4 border border-gray-400" onClick={e => { setGender(''); reset && reset(); }}>
+                <button type="button"
+                        disabled={checkGenderValue()}
+                        className={`py-2 px-4 border border-gray-400 ${checkGenderValue() && 'bg-gray-200 text-gray-400'}`}
+                        onClick={e => { setGender(''); reset && reset(); }}>
                     { 'Reset Filter' }
                 </button>
             </div>

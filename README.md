@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##Additional Implementation
+
+From my perspective to improving this web performance is to:
+1. Use [Redux Saga](https://github.com/redux-saga/redux-saga) instead of [Redux Thunk](https://github.com/reduxjs/redux-thunk) to make redux middleware state flow easier to read
+2. Use [React Table](https://github.com/TanStack/react-table) is a good choice to have a better performance on table components
+3. Use [React Intl](https://formatjs.io/docs/react-intl/) for having a good internationalize structure
+
 ## Available Scripts
 
 In the project directory, you can run:
