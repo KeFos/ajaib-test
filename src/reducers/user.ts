@@ -80,4 +80,26 @@ export const fetchUsers = (params: any = {}, sort: any = {}, page: number = 1) =
         });
 }
 
+export const searchUsers = (value: string, params = { seed: '', page: 1 } ) => async (dispatch: Dispatch) => {
+    dispatch(getUsers());
+
+    await axiosService.get('')
+        .then(res => {
+
+            const { results } = res.data;
+
+            dispatch(getUsersSuccess({
+                ...res.data,
+                results: results.filter((user: UserModel) =>
+                    (`${user.name.first} ${user.name.last}`).includes(value) ||
+                    user.login.username.includes(value) ||
+                    user.email.includes(value))
+            }));
+        })
+        .catch(err => {
+            alert('Oops, Something went wrong!');
+            dispatch(getUsersFail());
+        });
+}
+
 export default userReducer;

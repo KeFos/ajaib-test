@@ -1,4 +1,4 @@
-import {SortType} from '../types/sort';
+import { SortType } from '../types/sort';
 import { GET_USERS, GET_USERS_FAIL, GET_USERS_SUCCESS, SORT_USERS } from '../types/user';
 
 export const getUsers = () => ({

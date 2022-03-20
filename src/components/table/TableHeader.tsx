@@ -1,7 +1,7 @@
-import { ReactChild } from 'react';
+import { ReactNode } from 'react';
 
 type Props = {
-    children: ReactChild[] | ReactChild
+    children: ReactNode[] | ReactNode
 }
 
 const TableHeader = ({ children }: Props) => {
